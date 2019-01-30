@@ -1,0 +1,36 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {american}{}
+\vspace {-\cftbeforechapskip }
+\babel@toc {american}{}
+\contentsline {chapter}{\numberline {1}{Introduction}}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}{Active Motion}}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}{Motivation and examples}}{4}{section.2.1}
+\contentsline {chapter}{\numberline {3}{Modeling Stochastic Dynamics of Active Matter}}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}{Mathematical framework and conventions}}{11}{section.3.1}
+\contentsline {section}{\numberline {3.2}{Simple isotropic random walk}}{12}{section.3.2}
+\contentsline {section}{\numberline {3.3}{Biased random walk}}{15}{section.3.3}
+\contentsline {section}{\numberline {3.4}{Persistent random walk}}{16}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}{Persistent random walk on a two-dimensional lattice}}{18}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}{Persistent random walk in two-dimensional continuous space}}{19}{subsection.3.4.2}
+\contentsline {chapter}{\numberline {4}{Random Search Strategies}}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}{Classification of search strategies}}{21}{section.4.1}
+\contentsline {section}{\numberline {4.2}{First-passage properties}}{22}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}{An intuitive approach to first-passage properties}}{23}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}{Electrostatics approach}}{24}{subsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.2.1}{Hitting probability}}{24}{subsubsection.4.2.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2.2}{First-passage time}}{27}{subsubsection.4.2.2.2}
+\contentsline {subsection}{\numberline {4.2.3}{Further approaches}}{30}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}{Search strategies beyond ordinary diffusion processes}}{30}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}{L\IeC {\'e}vy walks}}{30}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}{Intermittent search}}{31}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}{Sources of complexity in real systems}}{32}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4}{First-passage times of persistent random walkers}}{32}{section.4.4}
+\contentsline {chapter}{\numberline {5}{Search and Navigation in the Presence of Local Cues}}{37}{chapter.5}
+\contentsline {section}{\numberline {5.1}{Directional navigation (Taxis)}}{37}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}{Chemotaxis}}{37}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}{Non-directional navigation (Kinesis)}}{41}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}{Chemokinesis}}{42}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}{Durokinesis}}{42}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}{Outlook and further directions}}{45}{section.5.3}
+\vspace {\beforebibskip }
+\contentsline {chapter}{\numberline {}{Bibliography}}{47}{section*.21}

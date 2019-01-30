@@ -1,0 +1,80 @@
+This is BibTeX, Version 0.99d (TeX Live 2018/Arch Linux)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: thesis.aux
+The style file: biblatex.bst
+I couldn't open database file AMiede_Publications.bib
+---line 6 of file thesis.aux
+ : \bibdata{thesis-blx,Bibliography,AMiede_Publications
+ :                                                     }
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: FrontBackmatter/Titlepage.aux
+A level-1 auxiliary file: FrontBackmatter/Titleback.aux
+A level-1 auxiliary file: FrontBackmatter/Contents.aux
+A level-1 auxiliary file: Chapters/intro.aux
+A level-1 auxiliary file: Chapters/acMo.aux
+A level-1 auxiliary file: Chapters/modAM.aux
+A level-1 auxiliary file: Chapters/ranSS.aux
+A level-1 auxiliary file: Chapters/hints.aux
+A level-1 auxiliary file: FrontBackmatter/Bibliography.aux
+Reallocated glb_str_ptr (elt_size=8) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=8) to 20 items from 10.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated wiz_functions (elt_size=8) to 6000 items from 3000.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated field_info (elt_size=8) to 11811 items from 5000.
+Database file #1: thesis-blx.bib
+Database file #2: Bibliography.bib
+Biblatex version: 3.11
+Reallocated wiz_functions (elt_size=8) to 9000 items from 6000.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+You've used 49 entries,
+            6304 wiz_defined-function locations,
+            1608 strings with 52332 characters,
+and the built_in function-call counts, 368396 in all, are:
+= -- 28156
+> -- 6177
+< -- 2105
++ -- 8364
+- -- 2246
+* -- 27833
+:= -- 38107
+add.period$ -- 0
+call.type$ -- 49
+change.case$ -- 48
+chr.to.int$ -- 48
+cite$ -- 96
+duplicate$ -- 35826
+empty$ -- 33706
+format.name$ -- 3538
+if$ -- 76226
+int.to.chr$ -- 0
+int.to.str$ -- 137
+missing$ -- 0
+newline$ -- 2052
+num.names$ -- 2940
+pop$ -- 16834
+preamble$ -- 1
+purify$ -- 1654
+quote$ -- 0
+skip$ -- 11699
+stack$ -- 0
+substring$ -- 51710
+swap$ -- 9010
+text.length$ -- 1347
+text.prefix$ -- 49
+top$ -- 1
+type$ -- 1654
+warning$ -- 0
+while$ -- 4779
+width$ -- 0
+write$ -- 2004
+(There was 1 error message)
