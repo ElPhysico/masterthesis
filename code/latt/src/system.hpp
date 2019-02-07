@@ -42,10 +42,15 @@ struct sysVar {
         position tarPos;
 };
 
+struct statistics {
+        int forw, back, left, right;
+};
+
 
 /* Variables */
 extern sysVar svar;
 extern gsl_rng *gen;
+extern statistics stats;
 
 
 /* Functions */

@@ -5,6 +5,7 @@
 sysVar svar;
 int seed = time(0);
 gsl_rng *gen;
+statistics stats;
 
 
 /* Functions */

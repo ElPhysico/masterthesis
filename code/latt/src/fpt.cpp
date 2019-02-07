@@ -231,7 +231,7 @@ void headerMFPT(string &file)
 		fprintf(outf, "\n#System Length: %i", svar.L);
 		fprintf(outf, "\n#Detection Radius: %i", svar.D);
 		fprintf(outf, "\n#Ensembles: %i", svar.N);
-		fprintf(outf, "\n\n#p\t<fpt>\tdelta\t<fpt>/<fpt>_0\tdelta\n");
+		fprintf(outf, "\n\n#l_p\tp\t<fpt>\tdelta\t<fpt>/<fpt>_0\tdelta\n");
 		fclose(outf);
         }
 }
@@ -285,8 +285,10 @@ void headerCHMFPT(string &file)
 void printMFPT(string &file, double p, pair<double, double> data)
 {
         FILE *outf;
+        double lp = 1.0 / (1.0 - p);
         outf = fopen(file.c_str(), "a");
-        fprintf(outf, "%.3f", p);
+        fprintf(outf, "%.3f", lp / (1.0 * svar.L));
+        fprintf(outf, "\t%.3f", p);
         fprintf(outf, "\t%f\t%f", data.first, data.second);
 	fprintf(outf, "\t0.0\t0.0");
 	fprintf(outf, "\n");

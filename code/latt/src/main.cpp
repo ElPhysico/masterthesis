@@ -9,7 +9,7 @@ using namespace std;
 
 /* Variables */
 int N = 1e4;			/* Number of simulation runs */
-int L = 200;			/* System length */
+int L = 100;			/* System length */
 int D = 1;			/* Detection radius */
 int bc = 1;			/*
 			 	 * Boundary Condition Type
@@ -31,6 +31,7 @@ int ch = 0;			/*
 				 * -1 - testing case
 				 */
 double p = 0.9;			/* Persistency parameter */
+double lp;			/* Persistence length */
 double alpha = 0.1;		/* Release probability from abs. wall */
 int stepL = 1;			/* Step length of searcher */
 
@@ -62,11 +63,30 @@ int main(int argc, char const *argv[])
         walker.stepL = stepL;
 
 	// /* Testing Area */
+	cout << "\n\n:: Testing...";
+	string file = "./data/TESTING/mfpt-L=";
+	file += toString(svar.L);
+	file += "-N=";
+	file += toString(svar.N);
+	file += ".dat";
+	MFPT(file, 0.25);
+	for (int i = 0; i < 101; i++) {
+		lp = svar.L * 0.01 * i;
+		if (lp >= 1.0) {
+			p = 1.0 - 1.0 / lp;
+			MFPT(file, p);
+		}
+	}
+	// walker.init();
+	// for (int i = 0; i < svar.N; i++) {
+	// 	// walker.coutVars();
+	// 	walker.step();
+	// }
 	// string file = "./data/TESTING/startDis.dat";
 	// startingPosDistribution(file, svar.N);
 	// chMFPT(file);
-	pair<double, double> tmp = chmfpt();
-	cout << "\nMFPT over " << svar.N << " runs: " << tmp.first;
+	// pair<double, double> tmp = chmfpt();
+	// cout << "\nMFPT over " << svar.N << " runs: " << tmp.first;
 	// /*Testing Area */
 
         /* Main part of program here, calculations etc... */

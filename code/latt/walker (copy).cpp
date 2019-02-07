@@ -55,7 +55,7 @@ void Walker::init()
         }
 }
 
-/* Returns direction of next step. 0=right, 1=top, 2=left, 3=bottom */
+/* Returns direction of next step. */
 int Walker::getDirection()
 {
         double ran = gsl_rng_uniform(gen);
@@ -77,22 +77,20 @@ int Walker::getDirection()
         int direction;
         switch (tmp) {
         case 0:
-                stats.forw++;
                 direction = oldpos.dir;
                 break;
         case 1:
-                stats.back++;
                 direction = (oldpos.dir + 2) % 4;
+                if (direction == 0)
+                        direction = 4;
                 break;
         case 2:
-                int turn = 1;   // turn right
-                if (gsl_rng_uniform(gen) < 0.5) {
-                        stats.left++;
-                        turn = -1; // turn left
-                } else {
-                        stats.right++;
-                }
+                int turn = 1;
+                if (gsl_rng_uniform(gen) < 0.5)
+                        turn = -1;
                 direction = (oldpos.dir + turn) % 4;
+                if (direction == 0)
+                        direction = 4;
                 break;
         }
 
@@ -138,16 +136,16 @@ void Walker::innerStep()
         // cout << "\ninnerStep begin";
         pos.dir = getDirection();
         switch (pos.dir) {
-        case 0: /* step to the right */
+        case 1: /* step to the right */
                 pos.x += stepL;
                 break;
-        case 1: /* step to the top */
+        case 2: /* step to the top */
                 pos.y += stepL;
                 break;
-        case 2: /* step to the left */
+        case 3: /* step to the left */
                 pos.x -= stepL;
                 break;
-        case 3: /* step to the bottom */
+        case 4: /* step to the bottom */
                 pos.y -= stepL;
                 break;
         }
@@ -170,28 +168,28 @@ void Walker::step()
                 if (pos.x == 0) {
                         if (tmp) {
                                 pos.x += stepL;
-                                pos.dir = 0;
+                                pos.dir = 1;
                                 wallHits++;
                                 absorbCounter--;
                         }
                 } else if (pos.x == svar.L - 1) {
                         if (tmp) {
                                 pos.x -= stepL;
-                                pos.dir = 2;
+                                pos.dir = 3;
                                 wallHits++;
                                 absorbCounter--;
                         }
                 } else if (pos.y == 0) {
                         if (tmp) {
                                 pos.y += stepL;
-                                pos.dir = 1;
+                                pos.dir = 2;
                                 wallHits++;
                                 absorbCounter--;
                         }
                 } else if (pos.y == svar.L - 1) {
                         if (tmp) {
                                 pos.y -= stepL;
-                                pos.dir = 3;
+                                pos.dir = 4;
                                 wallHits++;
                                 absorbCounter--;
                         }

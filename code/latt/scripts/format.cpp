@@ -1,4 +1,5 @@
-a<y/* g++ -o format format.cpp */
+/* g++ -o format format.cpp */
+/* usage: format -path=pathtofile -val=rescalevalue */
 #include <fstream>
 #include <string.h>
 #include <stdio.h>
@@ -37,8 +38,8 @@ int main(int argc, char const *argv[])
 	val = 0;
 	string h1, h2, h3, h4, h5, h6, h7, h8;
 	double fpt_zero, fpt_d_zero;
-	vector<double> p, fpt, fpt_d;
-	vector<double> sorted_p, sorted_fpt, sorted_fpt_d;
+	vector<double> pl, p, fpt, fpt_d;
+	vector<double> sorted_pl, sorted_p, sorted_fpt, sorted_fpt_d;
 	ReadCommandLine(argc, argv, file, val);
 
 	infile.open(file.c_str());
@@ -51,15 +52,17 @@ int main(int argc, char const *argv[])
 		getline(infile, h4);
 		getline(infile, h5);
 		getline(infile, h6);
-		getline(infile, h7);
-		getline(infile, h8);
-		getline(infile, h8);
-		string sp, sfpt, sfpt_d, sscfpt, sscfpt_d;
-		while (infile >> sp >> sfpt >> sfpt_d >> sscfpt >> sscfpt_d) {
+		getline(infile, h6);
+		// getline(infile, h7);
+		// getline(infile, h8);
+		// getline(infile, h8);
+		string spl, sp, sfpt, sfpt_d, sscfpt, sscfpt_d;
+		while (infile >> spl >> sp >> sfpt >> sfpt_d >> sscfpt >> sscfpt_d) {
 			if (atof(sp.c_str()) == val) {
 				fpt_zero = atof(sfpt.c_str());
 				fpt_d_zero = atof(sfpt_d.c_str());
 			}
+			pl.push_back(atof(spl.c_str()));
 			p.push_back(atof(sp.c_str()));
 			fpt.push_back(atof(sfpt.c_str()));
 			fpt_d.push_back(atof(sfpt_d.c_str()));
@@ -80,9 +83,11 @@ int main(int argc, char const *argv[])
 				min_index = i;
 			}
 		}
+		sorted_pl.push_back(pl[min_index]);
 		sorted_p.push_back(p[min_index]);
 		sorted_fpt.push_back(fpt[min_index]);
 		sorted_fpt_d.push_back(fpt_d[min_index]);
+		pl.erase(pl.begin() + min_index);
 		p.erase(p.begin() + min_index);
 		fpt.erase(fpt.begin() + min_index);
 		fpt_d.erase(fpt_d.begin() + min_index);
@@ -105,7 +110,8 @@ int main(int argc, char const *argv[])
 
 	for (int i = 0; i < (int) sorted_p.size(); i++) {
 		fprintf(outfile, "\n");
-		fprintf(outfile, "%.3f", sorted_p[i]);
+		fprintf(outfile, "%.3f", sorted_pl[i]);
+		fprintf(outfile, "\t%.3f", sorted_p[i]);
 		fprintf(outfile, "\t%f\t%f", sorted_fpt[i], sorted_fpt_d[i]);
 		fprintf(outfile, "\t%f", sorted_fpt[i] / fpt_zero);
 		fprintf(outfile, "\t%f", sorted_fpt_d[i] / fpt_zero);

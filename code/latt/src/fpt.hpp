@@ -9,6 +9,7 @@
 
 /* Functions */
 pair<double, double> chmfpt();
+pair<double, double> mfpt(double pf);
 void MFPT(string &file, double p);
 void chMFPT(string &file);
 void linearMFPT(string &file, double p_min, double p_max);
