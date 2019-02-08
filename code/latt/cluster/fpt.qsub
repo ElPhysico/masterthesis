@@ -5,4 +5,4 @@
 #PBS -j oe 
 #
 cd ${PBS_O_WORKDIR} # change dir to the directory from which qsub is launched
-../main -p=$p -nRuns=$N -sysL=$L -detecR=$D -alpha=$alpha
+../main -rlp=$rlp -N=$N -L=$L -D=$D

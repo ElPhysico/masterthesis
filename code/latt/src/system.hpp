@@ -56,6 +56,7 @@ extern statistics stats;
 /* Functions */
 void ReadCommandLine(int argc, char const *argv[],
 	 		double &p,
+                        double &rlp,
 			int &N,
 			int &L,
                         int &D,

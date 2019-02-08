@@ -231,7 +231,7 @@ void headerMFPT(string &file)
 		fprintf(outf, "\n#System Length: %i", svar.L);
 		fprintf(outf, "\n#Detection Radius: %i", svar.D);
 		fprintf(outf, "\n#Ensembles: %i", svar.N);
-		fprintf(outf, "\n\n#l_p\tp\t<fpt>\tdelta\t<fpt>/<fpt>_0\tdelta\n");
+		fprintf(outf, "\n\n#rlp\tp\t<fpt>\tdelta\t<fpt>/<fpt>_0\tdelta\n");
 		fclose(outf);
         }
 }

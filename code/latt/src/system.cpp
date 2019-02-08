@@ -21,6 +21,7 @@ void setupGSL()
 /* Reads command line parameters. */
 void ReadCommandLine(int argc, char const *argv[],
 	 		double &p,
+                        double &rlp,
 			int &N,
 			int &L,
                         int &D,
@@ -32,6 +33,8 @@ void ReadCommandLine(int argc, char const *argv[],
 	for (int i = 1; i < argc; i++) {
 		if (strstr(argv[i], "-p="))
 			p = atof(argv[i] + 3);
+                if (strstr(argv[i], "-rlp="))
+                        rlp = atof(argv[i] + 5);
 		if (strstr(argv[i], "-N="))
 			N = atoi(argv[i] + 3);
 		if (strstr(argv[i], "-L="))

@@ -31,7 +31,7 @@ int ch = 0;			/*
 				 * -1 - testing case
 				 */
 double p = 0.9;			/* Persistency parameter */
-double lp;			/* Persistence length */
+double lp, rlp;			/* Persistence length and relative pl */
 double alpha = 0.1;		/* Release probability from abs. wall */
 int stepL = 1;			/* Step length of searcher */
 
@@ -54,29 +54,35 @@ int main(int argc, char const *argv[])
 
 	double p_min = 0.0, p_max = 1.0;
 
-        ReadCommandLine(argc, argv, p, N, L, D, alpha, ch, p_min, p_max);
+        ReadCommandLine(argc, argv, p, rlp, N, L, D, alpha, ch, p_min, p_max);
         setupEnv();
         setupSysVar();
+	lp = rlp * svar.L;
+	if (lp < 1.0) {
+		cout << "\n LP < 1 -> exiting program!";
+		return 0;
+	}
+	p = 1.0 - 1.0 / lp;
 	walker.setup(p);
+	walker.stepL = stepL;
         cout << "\n-> successful!";
 
-        walker.stepL = stepL;
 
 	// /* Testing Area */
-	cout << "\n\n:: Testing...";
-	string file = "./data/TESTING/mfpt-L=";
-	file += toString(svar.L);
-	file += "-N=";
-	file += toString(svar.N);
-	file += ".dat";
-	MFPT(file, 0.25);
-	for (int i = 0; i < 101; i++) {
-		lp = svar.L * 0.01 * i;
-		if (lp >= 1.0) {
-			p = 1.0 - 1.0 / lp;
-			MFPT(file, p);
-		}
-	}
+	// cout << "\n\n:: Testing...";
+	// string file = "./data/TESTING/mfpt-L=";
+	// file += toString(svar.L);
+	// file += "-N=";
+	// file += toString(svar.N);
+	// file += ".dat";
+	// MFPT(file, 0.25);
+	// for (int i = 0; i < 101; i++) {
+	// 	lp = svar.L * 0.01 * i;
+	// 	if (lp >= 1.0) {
+	// 		p = 1.0 - 1.0 / lp;
+	// 		MFPT(file, p);
+	// 	}
+	// }
 	// walker.init();
 	// for (int i = 0; i < svar.N; i++) {
 	// 	// walker.coutVars();
@@ -91,14 +97,19 @@ int main(int argc, char const *argv[])
 
         /* Main part of program here, calculations etc... */
         // string file = "./data/TESTING/";
-	// string file = "/localdisk/kklein/masterthesis/latt/data/ch/";
+	string file = "/localdisk/kklein/masterthesis/latt/data/";
+	file += "/2019/rlp/L/";
 	// file += "gaussianMfpt.dat";
 	// gaussianMFPT(file, p_min, p_max);
 	// linearMFPT(file, p_min, p_max);
 	// parabolicMFPT(file, p_min, p_max);
 	// file += "chMFPT-ch=";
-	// file += toString(svar.ch);
-	// file += ".dat";
+	file += "L=";
+	file += toString(svar.L);
+	file += ".dat";
+	MFPT(file, p);
+	/* Main part of program here, calculations etc... */
+
 
         cout << "\n\n:: Finishing program...";
 

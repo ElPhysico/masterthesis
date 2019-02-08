@@ -7,18 +7,21 @@
 #		done
 #done
 
-for N in 10000
+for N in 1000000
 do
-	for L in 200
+	for L in 10 100 200 500 1000
 	do
 		for D in 1
 		do
 			for alpha in 0.5
 			do
-				for p in $(seq 0 0.05 0.95)
+				for rlp in $(seq 0.01 0.01 1) #$(seq 0 0.05 0.95)
 				do
-					qsub -N FPT++alpha=$alpha++p=$p -v N=$N,L=$L,D=$D,alpha=$alpha,p=$p fpt.qsub
+					qsub -N FPT++rlp=$rlp++L=$L -v N=$N,L=$L,D=$D,alpha=$alpha,rlp=$rlp fpt.qsub
 				done
+				# job for pure diffusive walker below
+				rlp=$(bc -l <<< "1.0/0.75/$L")
+				qsub -N FPT++rlp=$rlp++L=$L -v N=$N,L=$L,D=$D,alpha=$alpha,rlp=$rlp fpt.qsub
 			done
 		done	
 	done
